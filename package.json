@@ -1,0 +1,22 @@
+{
+  "name": "bulbapedia-crawler",
+  "version": "0.1.0",
+  "description": "Periodically send requests to bulbapedia to extract pokemon games data.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "pokemon",
+    "crawler",
+    "bulbapedia",
+    "cron",
+    "data"
+  ],
+  "author": "romaric.ruga@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "jsdom": "^16.5.0",
+    "node-fetch": "^2.6.1"
+  }
+}
