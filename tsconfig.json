@@ -1,0 +1,13 @@
+{
+  "include": [ "./index.ts" ],
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "allowJs": true,
+    "lib": [ "DOM", "ES2019" ],
+    "module": "AMD",
+    "typeRoots": [
+        "./node_modules/@types"
+    ],
+    "outFile": "index.js"
+  }
+}
