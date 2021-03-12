@@ -26,6 +26,15 @@ const AVAILABILTY_CHARS = {
 }
 
 module.exports = async () => {
+  try {
+    await fs.stat(pokedexJSONPath)
+    return JSON.parse(await fs.readFile(
+      pokedexJSONPath,
+      'utf-8'
+    ))
+  } catch (err) {
+    if (err.code !== 'ENOENT') throw err
+  }
   const content = await fetchAndCachePokedex()
   const { document } = (new JSDOM(content)).window
   const pokemons = PagePokedex.generationsSectionSelector
