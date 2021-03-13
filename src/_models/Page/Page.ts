@@ -108,7 +108,9 @@ export default abstract class Page implements PageInterface {
   }
 
   async retrieveFromUrl() {
-    const res = await fetch(Page.REF_URL + this.url, {})
+    const url = Page.REF_URL + this.url
+    console.log('No cache detected, calling "' + url + '"')
+    const res = await fetch(url, {})
     return await res.text()
   }
 

@@ -2,18 +2,17 @@ import { JSDOM } from 'jsdom'
 import Page from "../../Page/Page"
 import { availabilityChars, gamesIndexByGeneration, generationsSectionSelector } from './_data/data'
 
-export default class PokedexPage extends Page {
-  private static readonly CACHE_PATH = '_cache/pokedex'
+export default class GamesAvailabilityPage extends Page {
+  private static readonly CACHE_PATH = '_cache/game-availability/game-availability'
   private static readonly PAGE_URL = '/wiki/List_of_Pokémon_by_availability'
 
   constructor() {
     super({
-      JSONCachePath: PokedexPage.CACHE_PATH
+      JSONCachePath: GamesAvailabilityPage.CACHE_PATH
         + '.json',
-      HTMLCachePath: PokedexPage.CACHE_PATH
+      HTMLCachePath: GamesAvailabilityPage.CACHE_PATH
         + '.html',
-      url: Page.REF_URL
-        + PokedexPage.PAGE_URL
+      url: GamesAvailabilityPage.PAGE_URL
     })
   }
 

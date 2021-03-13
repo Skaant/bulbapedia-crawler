@@ -1,10 +1,30 @@
-import PokedexPage from './src/_models/_pages/Pokedex/Pokedex.page'
-import PokemonPage from './src/_models/_pages/Pokemon/Pokemon.page'
-import PokedexEntryInterface from './src/_models/_interfaces/PokedexEntry/PokedexEntry.interface'
+import GamesAvailabilityPage from './src/_models/_pages/GamesAvailability/GamesAvailability.page'
+import RegionsIdEnum from './src/_enums/regionsId.enum'
+import RegionalPokedexPage from './src/_models/_pages/RegionalPokedex/RegionalPokedex.page'
+import GenerationsIdEnum from './src/_enums/generationsId.enum'
+import GenerationsStatsPage from './src/_models/_pages/GenerationsStatsPokemon/GenerationsStatsPokemon.page'
 
+const regionsId = Object.keys(RegionsIdEnum)
+const generationsId = Object.keys(GenerationsIdEnum)
 
-(new PokedexPage()).get()
-  .then(result =>
-    (new PokemonPage(result[0] as PokedexEntryInterface)).get()
-      .then(result => console.log(result))
-  )
+Promise.all([
+  (new GamesAvailabilityPage()).get(),
+  (new RegionalPokedexPage(RegionsIdEnum.kanto)).get(),
+  (new GenerationsStatsPage(GenerationsIdEnum.I)).get()
+  /* ...regionsId
+    .map(regionId =>
+      (new RegionalPokedexPage(RegionsIdEnum[regionId]).get())),
+  ...generationsId
+    .map(generationId =>
+      (new GenerationsStatsPage(GenerationsIdEnum[generationId]).get())) */
+])
+  .then(([
+    gamesAvailability,
+    ...result
+  ]) => {
+
+    const regionalPokedexes = result.slice(0, regionsId.length)
+    const generationsStats = result.slice(regionsId.length)
+
+    console.log('test memory usage')
+  })

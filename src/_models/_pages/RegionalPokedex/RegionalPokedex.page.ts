@@ -3,7 +3,7 @@ import RegionsIdEnum from '../../../_enums/regionsId.enum'
 import Page from '../../Page/Page'
 
 const REGIONS_URL = {
-  [RegionsIdEnum.kanto]: '/wiki/List_of_Pok%C3%A9mon_by_Kanto_Pok%C3%A9dex_number',
+  [RegionsIdEnum.kanto]: '/wiki/List_of_Pokémon_by_Kanto_Pokédex_number',
   [RegionsIdEnum.johto_1]: '/wiki/List_of_Pok%C3%A9mon_by_New_Pok%C3%A9dex_number',
   [RegionsIdEnum.johto_2]: '/wiki/List_of_Pok%C3%A9mon_by_Johto_Pok%C3%A9dex_number',
   [RegionsIdEnum.hoenn_1]: '/wiki/List_of_Pok%C3%A9mon_by_Hoenn_Pok%C3%A9dex_number_(Generation_III)',
@@ -34,8 +34,7 @@ export default class RegionalPokedexPage extends Page {
         + '/'
         + folderFileName
         + '.html',
-      url: Page.REF_URL
-        + REGIONS_URL[regionId]
+      url: REGIONS_URL[regionId]
     })
     this.regionId = regionId
   }

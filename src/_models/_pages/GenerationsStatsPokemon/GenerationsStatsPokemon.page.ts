@@ -22,7 +22,7 @@ const GENERATION_TO_GROUP = {
 }
 
 const GROUP_URL = {
-  [GenerationsStatsGroupEnum.I]: '/wiki/List_of_Pok%C3%A9mon_by_base_stats_(Generation_I)',
+  [GenerationsStatsGroupEnum.I]: '/wiki/List_of_Pokémon_by_base_stats_(Generation_I)',
   [GenerationsStatsGroupEnum.II_V]: '/wiki/List_of_Pok%C3%A9mon_by_base_stats_(Generation_II-V)',
   [GenerationsStatsGroupEnum.VI]: '/wiki/List_of_Pok%C3%A9mon_by_base_stats_(Generation_VI)',
   [GenerationsStatsGroupEnum.VII]: '/wiki/List_of_Pok%C3%A9mon_by_base_stats_(Generation_VII)',
@@ -47,8 +47,7 @@ export default class GenerationsStatsPage extends Page {
         + '/'
         + folderFileGroup
         + '.html',
-      url: Page.REF_URL
-        + GROUP_URL[generationGroup]
+      url: GROUP_URL[generationGroup]
     })
     this.generationId = generationId
   }
