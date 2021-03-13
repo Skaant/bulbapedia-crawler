@@ -24,6 +24,7 @@ export default class PokemonPage extends Page {
 
   proceedHTMLToJSON(html: string) {
     const { document } = (new JSDOM(html)).window
+    
     return { ok: 'true' }
   }
 }

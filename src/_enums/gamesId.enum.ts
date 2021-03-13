@@ -5,7 +5,7 @@ enum GamesIdEnum {
   yellow = 'yellow',
   gold = 'gold',
   silver = 'silver',
-  cristal = 'cristal',
+  crystal = 'crystal',
   ruby = 'ruby',
   sapphire = 'sapphire',
   fireRed = 'fireRed',

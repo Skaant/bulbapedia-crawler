@@ -22,7 +22,7 @@ export const gamesIndexByGeneration = [
     [GamesIdEnum.yellow]: 6,
     [GamesIdEnum.gold]: 7,
     [GamesIdEnum.silver]: 8,
-    [GamesIdEnum.cristal]: 9,
+    [GamesIdEnum.crystal]: 9,
     [GamesIdEnum.ruby]: 10,
     [GamesIdEnum.sapphire]: 11,
     [GamesIdEnum.fireRed]: 12,
@@ -54,7 +54,7 @@ export const gamesIndexByGeneration = [
   {
     [GamesIdEnum.gold]: 3,
     [GamesIdEnum.silver]: 4,
-    [GamesIdEnum.cristal]: 5,
+    [GamesIdEnum.crystal]: 5,
     [GamesIdEnum.ruby]: 6,
     [GamesIdEnum.sapphire]: 7,
     [GamesIdEnum.fireRed]: 8,
