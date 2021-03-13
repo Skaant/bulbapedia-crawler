@@ -1,4 +1,4 @@
-const { JSDOM } = require('jsdom')
+import { JSDOM } from 'jsdom'
 import Page from "../../Page/Page"
 import { availabilityChars, gamesIndexByGeneration, generationsSectionSelector } from './_data/data'
 
