@@ -2,6 +2,7 @@ import { JSDOM } from 'jsdom'
 import Page from "../../Page/Page"
 import { availabilityChars, gamesIndexByGeneration, generationsSectionSelector } from './_data/data'
 import PokemonGamesAvailabilitiesInterface from '../../_interfaces/PokemonGamesAvailabilities/PokemonGamesAvailabilities.interface'
+import AvailabilitiesEnum from '../../../_enums/availabilities.enum'
 
 export default class GamesAvailabilityPage extends Page {
   private static readonly CACHE_PATH = '_cache/game-availability/game-availability'
@@ -33,7 +34,7 @@ export default class GamesAvailabilityPage extends Page {
               index: index + 1,
               id: row.children[0].innerHTML.trim(),
               name: nameCell.innerHTML,
-              url: nameCell.getAttribute('href'),
+              // url: nameCell.getAttribute('href'),
               availabilities: {}
             }
             Object.entries(gamesIndexByGeneration[genIndex])
@@ -42,7 +43,7 @@ export default class GamesAvailabilityPage extends Page {
                   .innerHTML
                   .match(/C(?![DA])|S|D(?![ARW])|R|E(?![VTv])|B|CD|DA|CC|FS|EV|DR|DW|ET|Ev|T/g)
                     || [])
-                  .map(value => availabilityChars[value])
+                  .map(value => availabilityChars[value] as AvailabilitiesEnum)
               })
             return pokemon as PokemonGamesAvailabilitiesInterface
           })
