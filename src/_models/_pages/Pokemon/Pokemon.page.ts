@@ -1,4 +1,4 @@
-const { JSDOM } = require('jsdom')
+/* const { JSDOM } = require('jsdom')
 import Page from "../../Page/Page"
 import PokedexEntryInterface from "../../_interfaces/PokedexEntry/PokedexEntry.interface"
 
@@ -7,7 +7,7 @@ export default class PokemonPage extends Page {
 
   constructor({ index, url }: PokedexEntryInterface) {
     const paddedIndex = index.toString().padStart(3, '0')
-    /** 00X/00X */
+    // 00X/00X
     const folderFileName = paddedIndex + '/' + paddedIndex
     super({
       JSONCachePath: PokemonPage.CACHE_PATH
@@ -27,4 +27,4 @@ export default class PokemonPage extends Page {
     
     return { ok: 'true' }
   }
-}
+} */

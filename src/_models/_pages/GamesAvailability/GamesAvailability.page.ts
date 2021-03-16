@@ -1,6 +1,7 @@
 import { JSDOM } from 'jsdom'
 import Page from "../../Page/Page"
 import { availabilityChars, gamesIndexByGeneration, generationsSectionSelector } from './_data/data'
+import PokemonGamesAvailabilitiesInterface from '../../_interfaces/PokemonGamesAvailabilities/PokemonGamesAvailabilities.interface'
 
 export default class GamesAvailabilityPage extends Page {
   private static readonly CACHE_PATH = '_cache/game-availability/game-availability'
@@ -16,7 +17,7 @@ export default class GamesAvailabilityPage extends Page {
     })
   }
 
-  proceedHTMLToJSON(html: string) {
+  proceedHTMLToJSON(html: string): PokemonGamesAvailabilitiesInterface[] {
     const { document } = (new JSDOM(html)).window
     return generationsSectionSelector
       .map((sectionSelector, genIndex) => {
@@ -43,7 +44,7 @@ export default class GamesAvailabilityPage extends Page {
                     || [])
                   .map(value => availabilityChars[value])
               })
-            return pokemon
+            return pokemon as PokemonGamesAvailabilitiesInterface
           })
         return genPokemons
       })
